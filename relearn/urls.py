@@ -16,5 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
+    url(r'^time_display/', include('apps.time_display.urls')),
+
+    url(r'^books/', include('apps.books.urls')),
+
     url(r'^blogs/', include('apps.blogs.urls')),
+    
+    url(r'^', include('apps.standard.urls')),
 ]

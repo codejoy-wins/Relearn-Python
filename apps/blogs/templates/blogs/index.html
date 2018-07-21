@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blogs/css/style.css' %}">
     <title>html page</title>
 </head>
 <body>
-    Hi
+    Hi this is index blog
+    <h2>heading proof</h2>
+    <h1>blue</h1>
+    <p>Name: {{request.session.name}}</p>
+    <p>Desc: {{request.session.desc}}</p>
+    <p>Anon: {{request.session.anonymous}}</p> 
+
+
 </body>
 </html>
