@@ -18,6 +18,8 @@ from django.conf.urls import url, include
 urlpatterns = [
     url(r'^time_display/', include('apps.time_display.urls')),
 
+    url(r'^random_word/', include('apps.random_word.urls')),
+
     url(r'^books/', include('apps.books.urls')),
 
     url(r'^blogs/', include('apps.blogs.urls')),
