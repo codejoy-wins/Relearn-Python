@@ -1,0 +1,27 @@
+h1 {
+    color:whitesmoke
+    /* background-image: url("https://usatgiantswire.files.wordpress.com/2016/12/usatsi_8962402.jpg?w=1000&h=600&crop=1"); */
+    /* height:400px; */
+}
+/* Remember this */
+#rapper {
+    background-image: url("/static/standard/images/odb.jpg/");
+    background-repeat:no-repeat;
+    background-size:auto;
+    text-align: right;
+    height: 600px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+h2{
+    color:white;
+}
+
+a{
+    color:white;
+}
+
+#unchained{
+    color:white;
+}
