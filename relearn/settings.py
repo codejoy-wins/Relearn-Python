@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.random_word',
+    'apps.session_words',
     'apps.time_display',
     'apps.books',
     'apps.blogs',

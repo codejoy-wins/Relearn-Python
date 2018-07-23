@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sesh words</title>
+</head>
+<body>
+        <a href="/">Go Back</a>
+
+    <form action="/session_words/process/" method="post">
+        {% csrf_token %}
+        <h2>Add a new word</h2>
+        <p><input type="text" name="word"></p>
+        <span>Choose color:</span>
+        <p><input type="radio" name="color" id="color1" value="red"><label for="color1">Red</label></p>
+        <p><input type="radio" name="color" id="color2" value="green"><label for="color2">Green</label></p>
+        <p><input type="radio" name="color" id="color3" value="blue"><label for="color3">Blue</label></p>
+        <p><input type="checkbox" name="big_fonts" id="big_fonts"><label for="big_fonts">Show in BIG fonts!</label></p>
+        <input type="submit" value="Add to Session">
+    </form>
+
+    <div>
+            {% for x in request.session.word_list %}
+                <{{x.font_size}} style="color:{{x.color}}">{{x.word}}</{{x.font_size}}>
+                <p>Added: {{x.created_at}}</p>
+            {% endfor %}
+            <a href="/session_words/clear/"><button>Clear Session</button></a>
+        </div>
+
+        <a href="/session_words/animal/">Jungle</a>
+</body>
+</html>
