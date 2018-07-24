@@ -89,6 +89,13 @@ def jungle(request):
         elif request.POST['size'] == 'large':
             print "Your animal is large sized"
 
+    if not 'color' in request.POST:
+        print "no color chosen"
+        animal['color'] = 'black'
+    else:
+        animal['color'] = request.POST['color']
+        print ("you chose " + request.POST['color'])
+
     if not 'fly' in request.POST:
         print 'Your animal cannot fly'
     else:
