@@ -42,10 +42,13 @@ def process(request):
         return redirect('/session_words/')
 
 def clear(request):
+    print "CLEAR"
     if 'word_list' in request.session:
         del request.session['word_list']
     if 'new_word' in request.session:
         del request.session['new_word']
+    if 'animal_list' in request.session:
+        del request.session['animal_list']
     print "Session cleared."
     return redirect('/session_words/')
 
@@ -55,8 +58,12 @@ def animal(request):
     return render(request, "session_words/animal.html")
 
 def jungle(request):
+    print "In the jungle, baby."
+    print "*"*44
+    print request.POST
+    print "*"*44
+    # got data.
 
-    animal = {}
     animal = {
         'species' : 'not specified',
         'size' : 'not specified',
@@ -64,29 +71,17 @@ def jungle(request):
         'walk' : 'cannot',
         'swim' : 'cannot',
     }
-    print "In the jungle, baby."
-    print "*"*44
-    print request.POST
-    print "*"*44
-
-    print bool(request.POST['species'])
-    print request.POST['species']
     variable = bool(request.POST['species'])
-    print variable
     if variable == False:
-        print 'falsey'
+        print 'no species given'
         return redirect('/session_words/animal/')
     else:
-        print 'truthy'
-
-
-
+        print ("Your animal is of the species: " + request.POST['species'])
     animal['species'] = request.POST['species']
     if not 'size' in request.POST:
         print 'size not selected'
     else:
         animal['size'] = request.POST['size']
-        print 'size is' + request.POST['size']
         if request.POST['size'] == 'small':
             print "Your animal is small"
         elif request.POST['size'] == 'medium':
@@ -95,39 +90,44 @@ def jungle(request):
             print "Your animal is large sized"
 
     if not 'fly' in request.POST:
-        print 'fly not selected'
+        print 'Your animal cannot fly'
     else:
         print 'Your animal can fly!'
         animal['fly'] = 'can'
 
     if not 'walk' in request.POST:
-        print 'walk not selected'
+        print 'Your animal cannot walk'
     else:
         print 'Your animal can walk!'
         animal['walk'] = 'can'
     
     if not 'swim' in request.POST:
-        print 'swim not selected'
+        print 'Your animal cannot swim'
     else:
         print 'Your animal can swim!'
         animal['swim'] = 'can'
 
 
     print "*"*50
+    print "Your animal in object form: "
     print animal
-    print "*"*50
+    print "Your animal_list in session is: "
 
- # program is crashing if I don't select radio or checkbox
+    if not 'animal_list' in request.session:
+        request.session['animal_list'] = []
+        request.session['animal_list'].append(animal)
+    else:
+        animal_list = request.session['animal_list']
+        animal_list.append(animal)
+        request.session['animal_list'] = animal_list
+    print request.session['animal_list']
+    for x in request.session['animal_list']:
+        print "*"*40
+        print x['species']
+        print "*"*40
 
-#  if there is no value selected, the dictionary your server receives will not contain a key with that name
 
-    # must provide default values
-    # print request.POST['fly']
-    # print request.POST['walk']
-    # print request.POST['swim']
     return  redirect("/session_words/animal")
     
-
-
 def odell(request):
     return HttpResponse("odell catches everything")
