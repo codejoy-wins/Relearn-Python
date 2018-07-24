@@ -132,7 +132,12 @@ def jungle(request):
         print "*"*40
         print x['species']
         print "*"*40
-
+    if not 'big' in request.POST:
+        animal['big'] = "p"
+        print "p"
+    else:
+        print request.POST['big']
+        animal['big'] = "h1"
 
     return  redirect("/session_words/animal")
     

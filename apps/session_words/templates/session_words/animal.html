@@ -4,42 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/session_words/css/style.css/' %}">
     <title>Animal Form</title>
 </head>
 <body>
-    <h1>Animal Form</h1>
-
-    <form action="/session_words/jungle/" method="POST">
-        {% csrf_token %}
-        <p> <label for="species">Species: </label> <input type="text" name="species" id ="species"></p>
-        <h2>Size: </h2>
-        <p>  <label for="small">Small</label> <input type="radio" name= "size" id ="small" value ="small">  </p>
-        <p>  <label for="medium">medium</label> <input type="radio" name= "size" id ="medium" value ="medium">  </p>
-        <p>  <label for="large">large</label> <input type="radio" name= "size" id ="large" value = "large">  </p>
-        <h2>Choose Color: </h2>
-        <p>  <label for="gold">Gold</label> <input type="radio" name= "color" id ="gold" value ="gold">  </p>
-        <p>  <label for="purple">Purple</label> <input type="radio" name= "color" id ="purple" value ="purple">  </p>
-        <p>  <label for="orange">Orange</label> <input type="radio" name= "color" id ="orange" value = "orange">  </p>
-        <h3>Abilities: </h3>
-        <p> <label for="flying">Flying</label> <input type="checkbox" name = "fly" id ="flying" value="flying"></p>
-        <p> <label for="swimming">Swimming</label> <input type="checkbox" name = "swim" id ="swimming" value="swimming"></p>
-        <p> <label for="walking">Walking</label> <input type="checkbox" name = "walk" id ="walking" value="walking"></p>
-
-
-
-        <p><input type="submit" name="submission" value="learn"></p>
-
-    </form>
-
-    {% for x in request.session.animal_list %}
-                <h1 style="color: {{x.color}}">{{x.species}}</h1>
-                <p>{{x.size}} size</p>
-                <p>{{x.fly}} fly</p>
-                <p>{{x.swim}} swim</p>
-                <p>{{x.walk}} walk</p>
-                <p>---------------</p>
+    <div id = "wrapper">
+        <div id ="left_side">
+                <h1 id = "heading">Animal Form</h1>
+                <form action="/session_words/jungle/" method="POST">
+                    {% csrf_token %}
+                    <p> <label for="species">Species: </label> <input type="text" name="species" id ="species"></p>
+                    <h2>Size: </h2>
+                    <p>  <label for="small">Small</label> <input type="radio" name= "size" id ="small" value ="small">  </p>
+                    <p>  <label for="medium">medium</label> <input type="radio" name= "size" id ="medium" value ="medium">  </p>
+                    <p>  <label for="large">large</label> <input type="radio" name= "size" id ="large" value = "large">  </p>
+                    <h2>Choose Color: </h2>
+                    <p>  <label for="gold">Gold</label> <input type="radio" name= "color" id ="gold" value ="gold">  </p>
+                    <p>  <label for="purple">Purple</label> <input type="radio" name= "color" id ="purple" value ="purple">  </p>
+                    <p>  <label for="orange">Orange</label> <input type="radio" name= "color" id ="orange" value = "orange">  </p>
+                    <h3>Abilities: </h3>
+                    <p> <label for="flying">Flying</label> <input type="checkbox" name = "fly" id ="flying" value="flying"></p>
+                    <p> <label for="swimming">Swimming</label> <input type="checkbox" name = "swim" id ="swimming" value="swimming"></p>
+                    <p> <label for="walking">Walking</label> <input type="checkbox" name = "walk" id ="walking" value="walking"></p>
+                    <h3>Display in Big Text?</h3>
+                    <p> <label for="big">Yes</label><input type="checkbox" name = "big" id ="big" value="big"></p>
+            
+            
+            
+                    <p><input type="submit" name="submission" value="learn"></p>
+            
+                </form>
+        </div>
+        <div id ="right_side">
+            {% for x in request.session.animal_list %}
+                    <p>-----------------------</p>
+                    <{{x.big}} style="color: {{x.color}}">{{x.species}}</{{x.big}}>
+                    <{{x.big}} style="color: {{x.color}}">{{x.size}} size</{{x.big}}>
+                    <{{x.big}} style="color: {{x.color}}">{{x.fly}} fly</{{x.big}}>
+                    <{{x.big}} style="color: {{x.color}}">{{x.swim}} swim</{{x.big}}>
+                    <{{x.big}} style="color: {{x.color}}">{{x.walk}} walk</{{x.big}}>
             {% endfor %}
-
+            <a href="/session_words/clear/">Clear Sesh</a>
+        </div>
+    </div>
     <a href="/session_words/clear/">Clear Sesh</a>
+    <a href="/">Return Home</a>
+
 </body>
 </html>

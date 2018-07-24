@@ -1,0 +1,23 @@
+#heading {
+    color: brown;
+    text-align: center;
+}
+
+#left_side {
+    display: inline-block;
+    width:44%;
+}
+
+#right_side {
+    display: inline-block;
+    width:44%;
+    overflow: auto;
+    height:600px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    background-image: url('/static/session_words/images/scary.jpg');
+    /* background-image: url("/static/standard/images/odb.jpg/"); */
+
+}
