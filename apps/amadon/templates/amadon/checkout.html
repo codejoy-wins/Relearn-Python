@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'amadon/css/style.css' %}">
+    <title>Checkout Page</title>
+</head>
+<body>
+    <div id = "wrapper">
+        <h1>Thank you for shopping at my store!</h1>
+        <a href="/amadon/">Continue Shopping</a>
+        <p>You bought {{quantity}} of {{car}} for ${{fixed}}</p>
+        <p>You have spent a total so far of ${{total}}</p>
+        <p>You have bought {{items}} items so far</p>
+        <a href="/amadon/clear/"> Clear Costs in Session </a>
+
+    </div>
+    
+
+</body>
+</html>

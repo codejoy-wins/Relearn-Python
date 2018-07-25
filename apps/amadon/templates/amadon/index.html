@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon</title>
+</head>
+<body>
+    <h1>Amadon</h1>
+
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td name="car">Lamborghini Huracán LP 580-2 Spyder</td>
+            <td name = "price">$219,780</td>
+            <form action="/amadon/buy1" method="POST">
+            {% csrf_token %}
+            <td><select name="quantity" id="quantity"><option value="1">1</option><option value="2">2</option></select></td>
+            <td><input type="submit" value="Buy"></td>
+            </form>
+        </tr>
+        <tr>
+                <td name = "car">Aston Martin DB11 V8</td>
+                <td name = "price">$198,995</td>
+            <form action="/amadon/buy2" method="POST">
+                {% csrf_token %}
+                <td><select name="quantity" id="quantity"><option value="1">1</option><option value="2">2</option></select></td>
+                <td><input type="submit" value="Buy"></td>
+            </form>
+        </tr>
+        
+
+    </table>
+
+
+</body>
+</html>

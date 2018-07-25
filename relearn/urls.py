@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^blogs/', include('apps.blogs.urls')),
 
     url(r'^session_words/', include('apps.session_words.urls')),
+
+    url(r'^amadon/', include('apps.amadon.urls')),
     
     url(r'^', include('apps.standard.urls')),
 ]

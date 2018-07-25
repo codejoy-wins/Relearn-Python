@@ -1,0 +1,6 @@
+#wrapper {
+    color:rgb(7, 7, 87);
+    margin: 0 auto;
+    background-image: url('/static/amadon/images/aston.jpg');
+    height: 1000px;
+}
