@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gold/css/style.css' %}">   
+    <title>GOLD</title>
+</head>
+<body>
+    <h1>Ninja  <span class="gold">Gold</span></h1>
+    <h2 class = "gold"> Gold: {{total_gold}}</h2>
+    <form action="/gold/process_money/farm" method="POST">
+        {% csrf_token %}
+        <h2>Farm</h2>
+        <input type="submit" value="Steal Gold!" class="lannister">
+    </form>
+    <form action="/gold/process_money/cave" method="POST">
+        {% csrf_token %}
+        <h2>Cave</h2>
+        <input type="submit" value="Steal Gold!" class="lannister">
+    </form>
+    <form action="/gold/process_money/house" method="POST">
+        {% csrf_token %}
+        <h2>House</h2>
+        <input type="submit" value="Steal Gold!" class="lannister">
+    </form>
+    <form action="/gold/process_money/casino" method="POST">
+        {% csrf_token %}
+        <h2>Casino</h2>
+        <input type="submit" value="Steal Gold!" class="lannister">
+    </form>
+
+    <div>
+        <h2>results</h2>
+        {{gold_now}}
+    </div>
+</body>
+</html>
