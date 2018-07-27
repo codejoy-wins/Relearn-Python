@@ -14,6 +14,8 @@ urlpatterns = [
     url(r'^session_words/', include('apps.session_words.urls')),
 
     url(r'^amadon/', include('apps.amadon.urls')),
+
+    url(r'user_login/', include('apps.user_login.urls')),
     
     url(r'^', include('apps.standard.urls')),
 ]

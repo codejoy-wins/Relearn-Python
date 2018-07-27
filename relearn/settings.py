@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.user_login',
     'apps.gold',
     'apps.amadon',
     'apps.random_word',

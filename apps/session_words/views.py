@@ -71,6 +71,8 @@ def jungle(request):
         'walk' : 'cannot',
         'swim' : 'cannot',
     }
+    animal['created_at'] = strftime("%I:%M:%S %p, %b %d, %Y", localtime())
+
     variable = bool(request.POST['species'])
     if variable == False:
         print 'no species given'

@@ -2,7 +2,9 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, HttpResponse, redirect
 import random
-
+from time import gmtime, strftime, localtime
+# This whole thing broke for some reason
+# ADD TIME
 def index(request):
     if 'color_now' in request.session:
         print request.session['color_now']
@@ -12,13 +14,14 @@ def index(request):
         else:
             print "red logic"
             logic = "lost"
-
+# do some if nots here to maybe fix everything
     context = {
         "jay": "silent bob",
-        "total_gold": request.session['gold'],
-        "gold_now": request.session['gold_now'],
-        "my_color": request.session['color_now'],
-        "my_logic": logic
+        # "total_gold": request.session['gold'],
+        # "gold_now": request.session['gold_now'],
+        # "my_color": request.session['color_now'],
+        # "my_logic": logic,
+        # "created_at": strftime("%I:%M:%S %p, %b %d, %Y", localtime())
     }
     return render(request, 'gold/index.html', context)
 
@@ -66,4 +69,3 @@ def yourMethodFromUrls(request):
   return render(request,'appname/page.html', context)
 
 # Blueprint ^^^
-

@@ -39,6 +39,7 @@
         <div id ="right_side">
             {% for x in request.session.animal_list %}
                     <p>-----------------------</p>
+                    {{x.created_at}}
                     <{{x.big}} style="color: {{x.color}}">{{x.species}}</{{x.big}}>
                     <{{x.big}} style="color: {{x.color}}">{{x.size}} size</{{x.big}}>
                     <{{x.big}} style="color: {{x.color}}">{{x.fly}} fly</{{x.big}}>
