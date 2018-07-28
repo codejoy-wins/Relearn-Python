@@ -3,11 +3,11 @@ from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse, redirect
 
 def index(request):
-    print "Ninja"
+    print "Book authors"
     context = {
-        "jay": "silent bob"
+        "jay": "silent bob2"
     }
-    return render(request, 'amadon/index.html', context)
+    return render(request, 'book_authors/index.html', context)
 
 def odell(request):
     return HttpResponse("odell catches everything")

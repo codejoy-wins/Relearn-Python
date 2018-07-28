@@ -23,8 +23,8 @@ class User(models.Model):
 #     comment = models.CharField(max_length=255)
 #     created_at = models.DateTimeField(auto_now_add = True)
 #     updated_at = models.DateTimeField(auto_now = True)
-    # Notice the association made with ForeignKey for a one-to-many relationshipcopy
-    # There can be many comments to one blog
+#     Notice the association made with ForeignKey for a one-to-many relationshipcopy
+#     There can be many comments to one blog
 #     blog = models.ForeignKey(Blog, related_name = "comments")
 # class Admin(models.Model):
 #     first_name = models.CharField(max_length=255)
