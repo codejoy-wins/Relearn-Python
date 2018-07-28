@@ -20,6 +20,8 @@ urlpatterns = [
     url(r'dojo_ninjas/', include('apps.dojo_ninjas.urls')),
 
     url(r'book_authors/', include('apps.book_authors.urls')),
+
+    url(r'like_books/', include('apps.like_books.urls')),
     
     url(r'^', include('apps.standard.urls')),
 ]

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.book_authors',
+    'apps.like_books',
     'apps.dojo_ninjas',
     'apps.user_login',
     'apps.gold',
