@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^amadon/', include('apps.amadon.urls')),
 
     url(r'user_login/', include('apps.user_login.urls')),
+
+    url(r'dojo_ninjas/', include('apps.dojo_ninjas.urls')),
     
     url(r'^', include('apps.standard.urls')),
 ]
