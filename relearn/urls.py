@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'book_authors/', include('apps.book_authors.urls')),
 
     url(r'like_books/', include('apps.like_books.urls')),
+
+    url(r'semi_restful/', include('apps.semi_restful.urls')),
     
     url(r'^', include('apps.standard.urls')),
 ]

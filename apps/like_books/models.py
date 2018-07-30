@@ -18,6 +18,4 @@ class Book(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     liked_by = models.ManyToManyField(User, related_name= "likes")
-
-
     # likes = models.ManyToManyField(Book, related_name = "liked_by")

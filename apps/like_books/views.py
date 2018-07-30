@@ -1,12 +1,13 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, HttpResponse, redirect
+from models import *
 
 def index(request):
     print "Like books"
     context = {
         "jay": "silent bob2",
-        # "book1": Book.objects.first()
+        "book1": Book.objects.first()
     }
     return render(request, 'like_books/index.html', context)
 

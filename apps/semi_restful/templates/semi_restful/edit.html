@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editor</title>
+</head>
+<body>
+    <h1>Editing {{user.id}}</h1>
+    <h2>{{user.first_name}}{{user.last_name}}</h2>
+    <form action="/semi_restful/users/{{user.id}}/update" method="POST">
+        {% csrf_token %}
+        <p>First Name: <input type="text" name="first_name" value = {{user.first_name}}></p>
+        <p>Last Name: <input type="text" name="last_name" value = {{user.last_name}}></p>
+        <p>Email Address: <input type="text" name="email" value = {{user.email}}></p>
+        <p><input type="submit" value="obey"></p>
+    </form>
+</body>
+</html>

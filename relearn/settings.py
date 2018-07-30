@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.semi_restful',
     'apps.book_authors',
     'apps.like_books',
     'apps.dojo_ninjas',
